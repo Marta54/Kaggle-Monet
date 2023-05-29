@@ -1,4 +1,4 @@
-# Transform photos into monet paintings (and vice-versa) from the Kaggle competition I’m Something of a Painter Myself
+# Transform photos into Monet paintings from the Kaggle competition I’m Something of a Painter Myself
 
 ## Introduction
 The objective of this project is to leverage the power of GANs to generate realistic Monet-style paintings from ordinary photographs. 
@@ -32,7 +32,7 @@ The models' architectures is the same discribed in the [original cGAN paper](htt
 Thus, the generator consists in three convolutional layers, followed by 9 residual layers (since the images are 256x256), two transpose convolutional layers and a last convolutional layer to convert the result into RGB.
 The discriminator consists in a 7x7 pathGAN with 5 convolutional layers. 
 
-<img src="CycleGAN.jpg"  width="700">
+<img src="CycleGAN/CycleGAN.jpg"  width="700">
 
 #### Training the GAN
 The generator and discriminator are trained in an adversarial manner. 
