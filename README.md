@@ -1,16 +1,23 @@
-# Kaggle-Monet
+# Transform photos into monet paintings (and vice-versa) from the Kaggle competition I’m Something of a Painter Myself
 
-## Cycle GAN to transform photos into monet paintings (and vice-versa) from the Kaggle competition I’m Something of a Painter Myself
-
-This repository contains a notebook that demonstrates the conversion of photos into Monet-style paintings and vice-versa using a Cycle Generative Adversarial Network (cGAN). 
-This project was inspired by the [Kaggle competition](https://www.kaggle.com/c/gan-getting-started) on GAN image synthesis.
-
-Introduction
+## Introduction
 The objective of this project is to leverage the power of GANs to generate realistic Monet-style paintings from ordinary photographs. 
 GANs are a type of deep learning model that consists of a generator and a discriminator. 
 The generator learns to generate new images that resemble the target domain (Monet paintings), while the discriminator tries to distinguish between real and generated images.
 Through adversarial training, the generator improves over time and learns to produce high-quality Monet-style paintings.
 
+
+This repository contains a notebook that demonstrates the conversion of photos into Monet-style paintings and vice-versa using a Cycle Generative Adversarial Network (cGAN). 
+This project was inspired by the [Kaggle competition](https://www.kaggle.com/c/gan-getting-started) on GAN image synthesis.
+
+## Dataset
+The dataset used in this project is the [Kaggle Monet paintings dataset](https://www.kaggle.com/c/gan-getting-started/data), which consists of a collection of Monet-style paintings and photographies. 
+The dataset contains a total of 300 Monet paintings and 7000+ photos (from which only 2500 were used to reduce the training time per epoch). 
+Each image is of size 256 x 256 pixels.
+
+## Methods and Techniques
+
+### Cycle GAN 
 In the case of a cycle GAN we have two generators and two discriminators that are trained together, creating a cycle (a). 
 Beside the adversial loss of the generators, the generator loss also includes a cycle-consistency loss and a identity loss. 
 The cycle-consistency loss consist in a L1-loss between an image obtained by passing the image through both generators and comparing the obtained image with the original (b).
@@ -20,20 +27,14 @@ Acording to the original paper authors, this loss is used to keep the tint of th
 
 <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200529210740/cycleconsistencyandlosses.PNG"  height="200">
 
-## Dataset
-The dataset used in this project is the [Kaggle Monet paintings dataset](https://www.kaggle.com/c/gan-getting-started/data), which consists of a collection of Monet-style paintings and photographies. 
-The dataset contains a total of 300 Monet paintings and 7000+ photos (from which only 2500 were used to reduce the training time per epoch). 
-Each image is of size 256 x 256 pixels.
-
-## Methods and Techniques
-### Building the architectures
+#### Building the architectures
 The models' architectures is the same discribed in the [original cGAN paper](https://arxiv.org/abs/1703.10593). 
 Thus, the generator consists in three convolutional layers, followed by 9 residual layers (since the images are 256x256), two transpose convolutional layers and a last convolutional layer to convert the result into RGB.
 The discriminator consists in a 7x7 pathGAN with 5 convolutional layers. 
 
 <img src="CycleGAN.jpg"  width="700">
 
-### Training the GAN
+#### Training the GAN
 The generator and discriminator are trained in an adversarial manner. 
 The generator generates paintings, and the discriminator tries to classify them as real or fake. 
 The generator's objective is to fool the discriminator, while the discriminator's objective is to accurately classify the paintings. 
