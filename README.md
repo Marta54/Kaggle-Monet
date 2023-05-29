@@ -17,7 +17,8 @@ The cycle-consistency loss consist in a L1-loss between an image obtained by pas
 The identity loss consist into passing an image of one dataset through the generator that created fake images like the ones in the same dataset (c). 
 Acording to the original paper authors, this loss is used to keep the tint of the images similar, being useful to transform images into paintings and vice-versa. 
 
-![alt text](https://media.geeksforgeeks.org/wp-content/uploads/20200529210740/cycleconsistencyandlosses.PNG)
+
+<img src="https://media.geeksforgeeks.org/wp-content/uploads/20200529210740/cycleconsistencyandlosses.PNG"  height="200">
 
 ## Dataset
 The dataset used in this project is the [Kaggle Monet paintings dataset](https://www.kaggle.com/c/gan-getting-started/data), which consists of a collection of Monet-style paintings and photographies. 
@@ -30,8 +31,7 @@ The models' architectures is the same discribed in the [original cGAN paper](htt
 Thus, the generator consists in three convolutional layers, followed by 9 residual layers (since the images are 256x256), two transpose convolutional layers and a last convolutional layer to convert the result into RGB.
 The discriminator consists in a 7x7 pathGAN with 5 convolutional layers. 
 
-
-![alt text](CycleGAN.jpg)
+<img src="CycleGAN.jpg"  width="500">
 
 ### Training the GAN
 The generator and discriminator are trained in an adversarial manner. 
