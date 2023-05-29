@@ -32,7 +32,7 @@ The models' architectures is the same discribed in the [original cGAN paper](htt
 Thus, the generator consists in three convolutional layers, followed by 9 residual layers (since the images are 256x256), two transpose convolutional layers and a last convolutional layer to convert the result into RGB.
 The discriminator consists in a 7x7 pathGAN with 5 convolutional layers. 
 
-<img src="CycleGAN.jpg"  width="700">
+<img src="CycleGAN/CycleGAN.jpg"  width="700">
 
 #### Training the GAN
 The generator and discriminator are trained in an adversarial manner. 
