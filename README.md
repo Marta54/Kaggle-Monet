@@ -1,4 +1,4 @@
-# Transform photos into monet paintings (and vice-versa) from the Kaggle competition I’m Something of a Painter Myself
+# Transform photos into Monet paintings from the Kaggle competition I’m Something of a Painter Myself
 
 ## Introduction
 The objective of this project is to leverage the power of GANs to generate realistic Monet-style paintings from ordinary photographs. 
